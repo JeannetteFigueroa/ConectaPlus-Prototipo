@@ -1,0 +1,110 @@
+:root {
+    --primary-color: #5a73b9;     /* Azul del texto Conecta+ */
+    --secondary-color: #a29bdc;   /* Morado del corazón */
+    --accent-color: #6cc0b9;      /* Verde agua de la mano */
+    --bg-color: #f4f6fc;
+    --text-color: #333;
+    --white: #fff;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(90, 115, 185, 0.08);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #fafdff;
+    transition: border-color 0.2s;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--secondary-color)33;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  }
+  
+  .extra-links, .extra-links a {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  .extra-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .error {
+    color: #d7263d;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    margin: 0.5rem 0 0.2rem 0.1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      padding: 1rem;
+      max-width: 98vw;
+    }
+    .logo {
+      width: 70px;
+    }
+  }
+  
