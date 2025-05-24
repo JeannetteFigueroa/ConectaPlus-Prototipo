@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Conecta+ - Registro</title>
-  <link rel="stylesheet" href="css/registro.css">
+  <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/registro.js"></script>
 </head>
 <body>
   <div class="container">
-    <img src="image/logo.png" alt="Logo Conecta+" class="logo">
+    <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
     <h2>Crear Cuenta</h2>
-    <form id="registerForm">
+    <form id="registerForm" autocomplete="off">
+      <label class="label-tipo">Tipo de usuario:</label>
+      <div class="toggle-group">
+        <input type="radio" id="rolVecino" name="rol" value="vecino" checked>
+        <label for="rolVecino" class="toggle-btn">Vecino</label>
+        <input type="radio" id="rolProfesional" name="rol" value="profesional">
+        <label for="rolProfesional" class="toggle-btn">Profesional</label>
+      </div>
+
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" required placeholder="Tu nombre">
+      <input type="text" id="nombre" required placeholder="Tu nombre" />
 
       <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" required placeholder="Tu apellido">
+      <input type="text" id="apellido" required placeholder="Tu apellido" />
 
       <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" required placeholder="correo@ejemplo.com">
+      <input type="email" id="email" required placeholder="correo@ejemplo.com" />
 
       <label for="fechaNacimiento">Fecha de nacimiento:</label>
-      <input type="date" id="fechaNacimiento" required>
+      <input type="date" id="fechaNacimiento" required />
 
       <label for="password">Contraseña:</label>
-      <input type="password" id="password" required minlength="6" placeholder="********">
+      <input type="password" id="password" required minlength="6" placeholder="********" />
 
       <label for="confirmPassword">Confirmar contraseña:</label>
-      <input type="password" id="confirmPassword" required minlength="6" placeholder="********">
+      <input type="password" id="confirmPassword" required minlength="6" placeholder="********" />
 
       <div id="registerError" class="error"></div>
+
       <button type="submit">Crear cuenta</button>
 
       <div class="extra-links">

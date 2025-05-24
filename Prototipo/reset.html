@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conecta+ - Restablecer Contraseña</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script defer src="js/reset.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="image/logo.png" alt="Logo Conecta+" class="logo">
+    <h2>Restablecer Contraseña</h2>
+    <form id="resetForm" autocomplete="off">
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+        <span class="error" id="emailError"></span>
+      </div>
+      <button type="submit">Enviar enlace de restablecimiento</button>
+      <div class="extra-links">
+        <a href="index.html">Volver a iniciar sesión</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bolsa de Trabajo - Conecta+</title>
+  <link rel="stylesheet" href="css/bolsa_trabajo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="header">
+    <div class="header-left">
+      <button id="hamburger" class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo-bg">
+        <a href="principal.html" aria-label="Inicio Conecta+">
+          <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
+        </a>
+      </div>
+      <span class="app-title">Conecta+</span>
+    </div>
+
+    <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Navegación principal">
+      <a href="principal.html" class="nav-link">Inicio</a>
+      <a href="foro.html" class="nav-link">Foro</a>
+      <a href="bolsa_trabajo.html" class="nav-link active">Bolsa de trabajo</a>
+      <a href="ayuda.html" class="nav-link">Ayuda</a>
+      <a href="chats.html" class="nav-link">Chats</a>
+    </nav>
+
+    <div class="account-menu" id="accountMenu">
+      <button id="accountBtn" class="account-btn" aria-label="Cuenta">
+        <img src="image/avatar.png" alt="Cuenta" class="avatar-mini" />
+        <span class="caret"></span>
+      </button>
+      <div id="accountDropdown" class="account-dropdown" hidden>
+        <a href="#">Mi perfil</a>
+        <a href="#">Modificar cuenta</a>
+        <a href="#">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main tabindex="-1">
+    <h1>Bolsa de Trabajo</h1>
+
+    <form class="search-bar" role="search" aria-label="Buscar empleos">
+      <input type="text" id="keyword" name="keyword" placeholder="Buscar por título o palabra clave" />
+      <select id="location" name="location" aria-label="Filtrar por ubicación">
+        <option value="">Todas las ubicaciones</option>
+        <option value="santiago">Santiago</option>
+        <option value="valparaiso">Valparaíso</option>
+        <option value="concepcion">Concepción</option>
+      </select>
+      <select id="jobType" name="jobType" aria-label="Filtrar por tipo de empleo">
+        <option value="">Todos los tipos</option>
+        <option value="fulltime">Tiempo completo</option>
+        <option value="parttime">Medio tiempo</option>
+        <option value="remote">Remoto</option>
+      </select>
+      <button type="submit" aria-label="Buscar empleos"><i class="fas fa-search"></i> Buscar</button>
+    </form>
+
+    <ul class="job-list" aria-live="polite" aria-relevant="additions">
+      <li class="job-item" tabindex="0">
+        <div class="job-title">Asistente Administrativo</div>
+        <div class="job-company">Empresa XYZ</div>
+        <div class="job-location">Santiago, Región Metropolitana</div>
+        <div class="job-type">Tiempo completo</div>
+        <p class="job-description">Se busca persona organizada y proactiva para apoyar en tareas administrativas.</p>
+      </li>
+      <li class="job-item" tabindex="0">
+        <div class="job-title">Desarrollador Frontend</div>
+        <div class="job-company">Tech Solutions</div>
+        <div class="job-location">Valparaíso</div>
+        <div class="job-type">Remoto</div>
+        <p class="job-description">Experiencia en React y CSS. Trabajo remoto con horarios flexibles.</p>
+      </li>
+      <li class="job-item" tabindex="0">
+        <div class="job-title">Técnico en Mantención</div>
+        <div class="job-company">Industrias ABC</div>
+        <div class="job-location">Concepción</div>
+        <div class="job-type">Medio tiempo</div>
+        <p class="job-description">Responsable de mantenimiento preventivo y correctivo en planta industrial.</p>
+      </li>
+    </ul>
+  </main>
+
+  <script src="js/bolsa_trabajo.js" defer></script>
+</body>
+</html>

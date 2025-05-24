@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foro Comunitario - Conecta+</title>
+  <link rel="stylesheet" href="css/foro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <!-- Barra superior igual que Bolsa de Trabajo -->
+  <header class="header">
+    <div class="header-left">
+      <button id="hamburger" class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo-bg">
+        <a href="principal.html" aria-label="Inicio Conecta+">
+          <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
+        </a>
+      </div>
+      <span class="app-title">Conecta+</span>
+    </div>
+
+    <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Navegación principal">
+      <a href="principal.html" class="nav-link">Inicio</a>
+      <a href="foro.html" class="nav-link active">Foro</a>
+      <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
+      <a href="ayuda.html" class="nav-link">Ayuda</a>
+      <a href="chats.html" class="nav-link">Chats</a>
+    </nav>
+
+    <div class="account-menu" id="accountMenu">
+      <button id="accountBtn" class="account-btn" aria-label="Cuenta">
+        <img src="image/avatar.png" alt="Cuenta" class="avatar-mini" />
+        <span class="caret"></span>
+      </button>
+      <div id="accountDropdown" class="account-dropdown" hidden>
+        <a href="#">Mi perfil</a>
+        <a href="#">Modificar cuenta</a>
+        <a href="#">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Menú lateral dentro del main, visible en desktop -->
+    <aside class="sidebar">
+
+      <nav class="sidebar-nav">
+        <a href="#" class="active" data-category="todos"><i class="fa fa-list"></i> Todos</a>
+        <a href="#" data-category="apoyo_emocional"><i class="fa fa-heart"></i> Apoyo emocional</a>
+        <a href="#" data-category="formacion"><i class="fa fa-graduation-cap"></i> Formación</a>
+        <a href="#" data-category="servicios_sociales"><i class="fa fa-hands-helping"></i> Servicios sociales</a>
+      </nav>
+      <button id="btnNuevoTema" class="btn-nuevo-tema"><i class="fa fa-plus"></i> Nuevo tema</button>
+    </aside>
+
+    <main class="main-content">
+      <section id="listaTemasSection">
+        <h1>Temas del Foro</h1>
+        <input type="text" id="buscarTemas" placeholder="Buscar temas..." />
+        <ul id="listaTemas" class="lista-temas"></ul>
+      </section>
+
+      <section id="verTemaSection" class="hidden">
+        <button id="btnVolver" class="btn-volver"><i class="fa fa-arrow-left"></i> Volver</button>
+        <article id="temaDetalle" class="tema-detalle"></article>
+        <section class="comentarios-section">
+          <h2>Comentarios</h2>
+          <ul id="listaComentarios" class="lista-comentarios"></ul>
+          <form id="formComentario" class="form-comentario">
+            <textarea id="inputComentario" placeholder="Escribe tu comentario..." required></textarea>
+            <button type="submit"><i class="fa fa-paper-plane"></i> Enviar</button>
+          </form>
+        </section>
+      </section>
+
+      <section id="nuevoTemaSection" class="hidden">
+        <button id="btnCancelarNuevoTema" class="btn-volver"><i class="fa fa-arrow-left"></i> Cancelar</button>
+        <h1>Crear nuevo tema</h1>
+        <form id="formNuevoTema" class="form-nuevo-tema">
+          <label for="tituloTema">Título</label>
+          <input type="text" id="tituloTema" required maxlength="100" />
+          <label for="categoriaTema">Categoría</label>
+          <select id="categoriaTema" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="apoyo_emocional">Apoyo emocional</option>
+            <option value="formacion">Formación</option>
+            <option value="servicios_sociales">Servicios sociales</option>
+          </select>
+          <label for="contenidoTema">Contenido</label>
+          <textarea id="contenidoTema" required rows="6"></textarea>
+          <button type="submit"><i class="fa fa-check"></i> Publicar tema</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/foro.js"></script>
+</body>
+</html>

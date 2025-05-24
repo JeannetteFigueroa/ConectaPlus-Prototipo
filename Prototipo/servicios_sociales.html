@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicios Sociales - Conecta+</title>
+  <link rel="stylesheet" href="css/servicios_sociales.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="image/logo.png" alt="Logo Conecta+" class="sidebar-logo" />
+        <span class="sidebar-title">Conecta+</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="principal.html"><i class="fa fa-home"></i> Inicio</a>
+        <a href="apoyo_emocional.html"><i class="fa fa-heart"></i> Apoyo emocional</a>
+        <a href="formacion.html"><i class="fa fa-graduation-cap"></i> Formación</a>
+        <a href="servicios_sociales.html" class="active"><i class="fa fa-hands-helping"></i> Servicios sociales</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <h1 class="page-title">Área de Servicios Sociales</h1>
+
+      <!-- Buscador -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar servicios..." aria-label="Buscar servicios" />
+        <button aria-label="Buscar"><i class="fa fa-search"></i></button>
+      </div>
+
+      <!-- Mapa de comuna/región -->
+      <section class="map-section">
+        <h2>Mapa de comuna/región</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.882817060884!2d-70.64826978469162!3d-33.4569409807798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c59a9f1e5b67%3A0x4c4f6e4b3f6f2e9d!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2sus!4v1684350000000!5m2!1ses!2sus"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
+
+      <!-- Secciones de Servicios Sociales -->
+      <section class="services-area" id="servicesArea">
+
+        <article class="service-card" data-keywords="salud bienestar centros salud horas medicas psicologicas farmacias solidarias medicamentos salud mental municipal comunitario">
+          <h3>1. Salud y Bienestar</h3>
+          <ul>
+            <li>Información sobre centros de salud gratuitos o de bajo costo.</li>
+            <li>Solicitud de horas médicas o psicológicas.</li>
+            <li>Mapa de farmacias solidarias o entrega de medicamentos.</li>
+            <li>Acceso a servicios de salud mental municipales o comunitarios.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56912345678" aria-label="Llamar a Salud y Bienestar"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56912345678" target="_blank" rel="noopener" aria-label="WhatsApp Salud y Bienestar"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="alimentacion comedores comunitarios ollas comunes cajas alimentos insumos donacion red vecinos">
+          <h3>2. Alimentación</h3>
+          <ul>
+            <li>Mapa de comedores comunitarios y ollas comunes.</li>
+            <li>Entrega de cajas de alimentos o insumos básicos.</li>
+            <li>Campañas de donación de alimentos.</li>
+            <li>Red de vecinos que comparten recursos.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56923456789" aria-label="Llamar a Alimentación"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56923456789" target="_blank" rel="noopener" aria-label="WhatsApp Alimentación"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="vivienda proteccion subsidios habitacionales apoyo legal desalojos arriendo albergues residencias temporales">
+          <h3>3. Vivienda y Protección</h3>
+          <ul>
+            <li>Orientación sobre subsidios habitacionales.</li>
+            <li>Apoyo legal ante desalojos o problemas de arriendo.</li>
+            <li>Información sobre albergues y residencias temporales.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56934567890" aria-label="Llamar a Vivienda y Protección"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56934567890" target="_blank" rel="noopener" aria-label="WhatsApp Vivienda y Protección"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="infancia personas mayores cuidado infantil actividades redes acompañamiento pensiones bonos">
+          <h3>4. Apoyo a la Infancia y Personas Mayores</h3>
+          <ul>
+            <li>Servicios de cuidado infantil gratuitos o subsidiados.</li>
+            <li>Actividades y redes de acompañamiento para personas mayores.</li>
+            <li>Información sobre pensiones y bonos.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56945678901" aria-label="Llamar a Apoyo a la Infancia y Personas Mayores"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56945678901" target="_blank" rel="noopener" aria-label="WhatsApp Apoyo a la Infancia y Personas Mayores"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="educacion capacitacion inscripcion escuelas jardines programas adultos becas ayudas materiales talleres manualidades apoyo escolar">
+          <h3>5. Educación y Capacitación</h3>
+          <ul>
+            <li>Apoyo para inscripción a escuelas, jardines y programas de educación para adultos.</li>
+            <li>Beca o ayuda para materiales escolares.</li>
+            <li>Talleres comunitarios abiertos (manualidades, apoyo escolar, etc.).</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56956789012" aria-label="Llamar a Educación y Capacitación"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56956789012" target="_blank" rel="noopener" aria-label="WhatsApp Educación y Capacitación"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="empleo emprendimiento orientacion laboral bolsa trabajo ferias asesorias fondos">
+          <h3>6. Empleo y Emprendimiento</h3>
+          <ul>
+            <li>Orientación laboral gratuita.</li>
+            <li>Bolsa de trabajo comunitaria o municipal.</li>
+            <li>Ferias laborales y de emprendimiento social.</li>
+            <li>Asesoría para postular a fondos públicos o privados.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56967890123" aria-label="Llamar a Empleo y Emprendimiento"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56967890123" target="_blank" rel="noopener" aria-label="WhatsApp Empleo y Emprendimiento"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="asistencia juridica social orientacion legal violencia intrafamiliar pensiones derechos laborales trabajadores sociales tramites identidad registro civil clave unica">
+          <h3>7. Asistencia Jurídica y Social</h3>
+          <ul>
+            <li>Orientación legal gratuita (violencia intrafamiliar, pensiones, derechos laborales).</li>
+            <li>Acceso a trabajadores sociales o gestores comunitarios.</li>
+            <li>Trámites de identidad (registro civil, clave única, etc.).</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56978901234" aria-label="Llamar a Asistencia Jurídica y Social"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56978901234" target="_blank" rel="noopener" aria-label="WhatsApp Asistencia Jurídica y Social"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-keywords="apoyo emergencias ayuda violencia salud mental desastres centros acopio ayuda solidaria lineas contencion">
+          <h3>8. Apoyo en Emergencias</h3>
+          <ul>
+            <li>Contacto rápido para ayuda en situaciones críticas (violencia, salud mental, desastres).</li>
+            <li>Centros de acopio, ayuda solidaria y líneas de contención.</li>
+          </ul>
+          <div class="contact-buttons">
+            <a href="tel:+56989012345" aria-label="Llamar a Apoyo en Emergencias"><i class="fa fa-phone"></i> Llamar</a>
+            <a href="https://wa.me/56989012345" target="_blank" rel="noopener" aria-label="WhatsApp Apoyo en Emergencias"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Buscador funcional para filtrar servicios
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const services = document.querySelectorAll('.service-card');
+
+      services.forEach(service => {
+        const keywords = service.getAttribute('data-keywords');
+        if (keywords.toLowerCase().includes(query)) {
+          service.style.display = '';
+        } else {
+          service.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

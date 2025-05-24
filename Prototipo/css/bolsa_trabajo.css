@@ -1,0 +1,304 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Fondo de la imagen, cubriendo todo, con opacidad baja usando un pseudo-elemento */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Barra superior */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-bg .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  display: block;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+body, .nav-menu, .nav-link, .account-dropdown, .account-dropdown a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, !important;
+
+}
+
+.header {
+  background: #254c7b;
+  color: #fff;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none !important;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: var(--accent);
+  color: var(--primary);
+  outline: none;
+}
+
+.nav-link.active {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.account-dropdown {
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+}
+
+.account-dropdown a {
+  color: #000;
+  font-family: inherit;
+}
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 22px;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* Cuenta */
+.account-menu {
+  position: relative;
+}
+.account-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  padding: 0;
+}
+.avatar-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.caret {
+  border-top: 5px solid var(--white);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+}
+.account-dropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  color: #000;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 1001;
+}
+
+/* El atributo hidden oculta el menú */
+.account-dropdown[hidden] {
+  display: none;
+}
+
+.account-dropdown a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.account-dropdown a:hover,
+.account-dropdown a:focus {
+  background: var(--accent);
+  color: var(--primary);
+  outline: none;
+}
+
+
+/* Main content */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-bar input[type="text"],
+.search-bar select {
+  flex: 1 1 200px;
+  padding: 0.6rem 1rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-bar input[type="text"]:focus,
+.search-bar select:focus {
+  border-color: var(--primary);
+}
+
+.search-bar button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.job-item {
+  background: var(--bg);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 16px rgba(37, 76, 123, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.job-item:hover {
+  box-shadow: 0 8px 24px rgba(37, 76, 123, 0.2);
+  background: #d5f0f7;
+}
+
+.job-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.job-company {
+  font-weight: 600;
+  color: #3566a6;
+}
+
+.job-location,
+.job-type {
+  font-size: 0.9rem;
+  color: #5a73b9;
+}
+
+.job-description {
+  font-size: 1rem;
+  color: #31425b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .job-item {
+    padding: 1rem 1.2rem;
+  }
+  .search-bar {
+    flex-direction: column;
+  }
+  .search-bar input[type="text"],
+  .search-bar select,
+  .search-bar button {
+    flex: 1 1 100%;
+  }
+}

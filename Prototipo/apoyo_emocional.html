@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apoyo Emocional - Conecta+</title>
+  <link rel="stylesheet" href="css/apoyo_emocional.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script defer src="js/apoyo_emocional.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <!-- Menú lateral -->
+   <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="image/logo.png" alt="Logo Conecta+" class="sidebar-logo" />
+        <span class="sidebar-title">Conecta+</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="principal.html"><i class="fa fa-home"></i> Inicio</a>
+        <a href="apoyo_emocional.html" class="active"><i class="fa fa-heart"></i> Apoyo emocional</a>
+        <a href="formacion.html"><i class="fa fa-graduation-cap"></i> Formación</a>
+        <a href="servicios_sociales.html"><i class="fa fa-hands-helping"></i> Servicios sociales</a>
+      </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <!-- Tarjeta de bienvenida -->
+      <section class="welcome-card">
+        <div class="welcome-avatar">
+          <img src="image/avatar1.png" alt="Usuario" />
+        </div>
+        <div class="welcome-text">
+          <span class="welcome-title" id="welcomeUser">¡Te damos la bienvenida!</span>
+        </div>
+      </section>
+
+      <!-- Tarjeta informativa -->
+      <section class="info-card">
+        <p>
+          Si necesitas ayuda para manejar emociones difíciles o enfrentar situaciones complejas, aquí encontrarás apoyo profesional, orientación y recursos para tu bienestar.
+        </p>
+      </section>
+
+      <!-- Accesos rápidos -->
+      <section class="services-section">
+        <a href="videoconsulta.html" class="service-card">
+          <i class="fa fa-video service-icon"></i>
+          <span>Ir a videoconsulta</span>
+        </a>
+        <a href="chat-apoyo.html" class="service-card">
+          <i class="fa fa-comments service-icon"></i>
+          <span>Chat de apoyo</span>
+        </a>
+        <a href="historial-medico.html" class="service-card">
+          <i class="fa fa-file-medical service-icon"></i>
+          <span>Ver historial médico</span>
+        </a>
+        <a href="agendar_cita.html" class="service-card">
+          <i class="fa fa-calendar-plus service-icon"></i>
+          <span>Agendar cita</span>
+        </a>
+      </section>
+
+      <!-- Lista de psicólogos destacados -->
+      <section class="psicologos-section">
+        <h3>Psicólogos destacados</h3>
+        <ul class="psicologos-list">
+          <li>
+            <span>Laura G.</span>
+            <i class="fa fa-star"></i>
+            <a href="chat-apoyo.html" class="psicologo-chat" title="Chatear"><i class="fa fa-comments"></i></a>
+          </li>
+          <li>
+            <span>Mario R.</span>
+            <i class="fa fa-star"></i>
+            <a href="chat-apoyo.html" class="psicologo-chat" title="Chatear"><i class="fa fa-comments"></i></a>
+          </li>
+          <li>
+            <span>Elena S.</span>
+            <i class="fa fa-star"></i>
+            <a href="chat-apoyo.html" class="psicologo-chat" title="Chatear"><i class="fa fa-comments"></i></a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

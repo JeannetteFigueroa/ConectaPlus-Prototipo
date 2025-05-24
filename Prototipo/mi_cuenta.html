@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Perfil - Conecta+</title>
+  <link rel="stylesheet" href="css/perfil.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <!-- Barra superior igual que en otras páginas -->
+  <header class="header">
+    <div class="header-left">
+      <button id="hamburger" class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo-bg">
+        <a href="principal.html" aria-label="Inicio Conecta+">
+          <img src="image/avatar.png" alt="Avatar usuario" id="avatarMenu" class="avatar-mini" />
+        </a>
+      </div>
+      <span class="app-title">Conecta+</span>
+    </div>
+
+    <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Navegación principal">
+      <a href="principal.html" class="nav-link">Inicio</a>
+      <a href="foro.html" class="nav-link">Foro</a>
+      <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
+      <a href="ayuda.html" class="nav-link">Ayuda</a>
+      <a href="chats.html" class="nav-link">Chats</a>
+    </nav>
+
+    <div class="account-menu" id="accountMenu">
+      <button id="accountBtn" class="account-btn" aria-label="Cuenta" aria-haspopup="true" aria-expanded="false" aria-controls="accountDropdown">
+        <img src="image/avatar.png" alt="Cuenta" id="avatarBtn" class="avatar-mini" />
+        <span class="caret"></span>
+      </button>
+      <div id="accountDropdown" class="account-dropdown" hidden role="menu" aria-labelledby="accountBtn">
+        <!-- Aquí el JS insertará el contenido dinámico -->
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content" tabindex="-1" aria-label="Perfil de usuario">
+    <section class="perfil-datos">
+      <h1>Mi Perfil</h1>
+      <div class="perfil-info">
+        <img src="image/avatar.png" alt="Avatar usuario" id="avatarPerfil" class="avatar-grande" />
+        <div class="datos-personales">
+          <p><strong>Nombre:</strong> <span id="nombreUsuario">Cargando...</span></p>
+          <p><strong>Correo:</strong> <span id="correoUsuario">Cargando...</span></p>
+          <p><strong>Tipo de cuenta:</strong> <span id="tipoCuenta">Cargando...</span></p>
+          <p><strong>Ranking actual:</strong> <span id="rankingUsuario">Cargando...</span></p>
+          <p><strong>Puntos de canje:</strong> <span id="puntosCanje">Cargando...</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="perfil-actividades" aria-label="Actividades en las que ha participado">
+      <h2>Actividades recientes</h2>
+      <ul id="listaActividades" class="lista-actividades">
+        <!-- Actividades generadas por JS -->
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/perfil.js" defer></script>
+</body>
+</html>

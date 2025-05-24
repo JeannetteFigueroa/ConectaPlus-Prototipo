@@ -1,79 +1,162 @@
-/* Paleta basada en el logo de Conecta+ */
 :root {
-  --primary-color: #6a82fb;
-  --secondary-color: #fc5c7d;
-  --bg-color: #f4f6fc;
-  --text-color: #333;
+  --primary: #5a73b9;
+  --accent: #6cc0b9;
+  --heart: #a29bdc;
+  --bg: #f8fafc;
   --white: #fff;
+  --text: #31425b;
+  --error: #dc3545;
+  --shadow: 0 6px 24px rgba(90, 115, 185, 0.13);
 }
 
 body {
+  background: var(--bg);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
   margin: 0;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .container {
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
+  background: var(--white);
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 370px;
   text-align: center;
 }
 
 .logo {
-  width: 100px;
-  margin-bottom: 1rem;
+  width: 110px;
+  margin-bottom: 1.2rem;
 }
 
 h2 {
-  color: var(--primary-color);
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
-input, select {
+form label {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  display: block;
+  text-align: left;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'] {
   width: 100%;
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  border: 1px solid #ccc;
+  padding: 0.7rem;
+  border: 1.5px solid var(--accent);
   border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fafdff;
+  color: var(--text);
+  outline: none;
+  margin-top: 0.2rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--heart)33;
 }
 
 button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: var(--primary-color);
+  padding: 0.8rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   color: var(--white);
   border: none;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.08rem;
+  font-weight: bold;
   cursor: pointer;
+  margin-top: 1.2rem;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background: linear-gradient(90deg, var(--heart), var(--primary));
 }
 
 .extra-links {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: 1.3rem;
+  font-size: 0.97rem;
+  color: var(--primary);
 }
 
-a {
-  color: var(--secondary-color);
+.extra-links a {
+  color: var(--heart);
   text-decoration: none;
+  margin: 0 0.2rem;
+  transition: text-decoration 0.2s;
 }
 
-a:hover {
+.extra-links a:hover {
   text-decoration: underline;
 }
 
 .error {
-  color: red;
-  font-size: 0.85rem;
+  color: var(--error);
+  font-size: 0.93rem;
+  min-height: 1.2em;
+  margin-top: 0.4rem;
+  text-align: left;
+}
+
+.label-tipo {
+  display: block;
+  text-align: left;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.toggle-group input[type="radio"] {
+  display: none;
+}
+
+.toggle-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--accent);
+  border-radius: 2rem;
+  background: #fafdff;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.toggle-group input[type="radio"]:checked + .toggle-btn {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.toggle-btn:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
 }

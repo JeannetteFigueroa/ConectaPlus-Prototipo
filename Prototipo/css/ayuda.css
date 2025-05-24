@@ -1,0 +1,250 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+  --bg: #eaf2fb;
+  --text-dark: #31425b;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  position: relative;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-bg .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  display: block;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none !important;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: var(--accent);
+  color: var(--primary);
+  outline: none;
+}
+
+.nav-link.active {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 22px;
+  justify-content: center;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+.account-menu {
+  position: relative;
+}
+.account-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  padding: 0;
+}
+.avatar-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.caret {
+  border-top: 5px solid var(--white);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+}
+.account-dropdown {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: var(--white);
+  color: #000;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  z-index: 1001;
+}
+.account-dropdown[hidden] {
+  display: none;
+}
+.account-dropdown a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.account-dropdown a:hover,
+.account-dropdown a:focus {
+  background: var(--accent);
+  color: var(--primary);
+  outline: none;
+}
+
+/* Main content */
+.main-content {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+/* Formulario */
+.form-ayuda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-ayuda label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-ayuda input[type="text"],
+.form-ayuda input[type="email"],
+.form-ayuda textarea {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  border: 1.5px solid var(--accent);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-ayuda input[type="text"]:focus,
+.form-ayuda input[type="email"]:focus,
+.form-ayuda textarea:focus {
+  border-color: var(--primary);
+}
+
+.form-ayuda button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-ayuda button:hover,
+.form-ayuda button:focus {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* Info correo */
+.info-email {
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.info-email a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-email a:hover,
+.info-email a:focus {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}

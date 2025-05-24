@@ -1,0 +1,166 @@
+:root {
+  --primary: #3566a6;
+  --accent: #eaf2fb;
+  --white: #fff;
+  --shadow: 0 8px 30px rgba(53, 102, 166, 0.15);
+  --text: #31425b;
+}
+
+body {
+  margin: 0;
+  background: var(--accent);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: var(--white);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(53, 102, 166, 0.13);
+}
+
+.header h2 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cita-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="date"],
+select {
+  padding: 0.7rem;
+  border: 1.5px solid var(--primary);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fafdff;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border-color: #2b4e7a;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.2rem;
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-btn {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid var(--primary);
+  border-radius: 2rem;
+  background: #fafdff;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  user-select: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.radio-group input[type="radio"]:checked + .radio-btn {
+  background: linear-gradient(90deg, var(--primary), #5ca8e8);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.radio-btn:hover {
+  background: #dce4ff;
+  color: var(--primary);
+}
+
+.btn-agendar {
+  background: linear-gradient(90deg, var(--primary), #5ca8e8);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(53, 102, 166, 0.12);
+}
+
+.btn-agendar:hover {
+  background: linear-gradient(90deg, #5ca8e8, var(--primary));
+}
+
+.mensaje {
+  min-height: 1.2em;
+  font-size: 0.98rem;
+  color: #219150;
+  font-weight: 500;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
+  .header h2 {
+    font-size: 1.1rem;
+  }
+}
