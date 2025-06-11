@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Historial Médico y Futuras Consultas - Conecta+</title>
+    <link rel="stylesheet" href="css/historial_medico.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script defer src="js/historial_medico.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="principal.html" class="logo-link" aria-label="Inicio Conecta+">
+        <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
+      </a>
+      <h1>Historial Médico y Futuras Consultas</h1>
+    </header>
+
+    <main class="main-content" tabindex="-1">
+      <!-- Historial Médico -->
+      <section aria-labelledby="historialTitle" class="historial-section">
+        <button
+          type="button"
+          class="btn-regresar"
+          onclick="history.back()"
+          aria-label="Regresar página anterior"
+        >
+          <i class="fa fa-arrow-left" aria-hidden="true"></i> Volver
+        </button>
+
+        <h2 id="historialTitle">Historial Médico</h2>
+        <table class="historial-table" role="grid">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Especialidad</th>
+              <th>Profesional</th>
+              <th>Diagnóstico</th>
+              <th>Notas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila -->
+            <tr>
+              <td>10/05/2025</td>
+              <td>Psicología</td>
+              <td>Dr. Ana Gómez</td>
+              <td>Ansiedad leve</td>
+              <td>Recomendación: terapia semanal</td>
+            </tr>
+            <!-- Más filas generadas dinámicamente o estáticas -->
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Futuras Consultas -->
+      <section aria-labelledby="consultasTitle" class="consultas-section">
+        <h2 id="consultasTitle">Futuras Consultas</h2>
+        <ul class="consultas-list" role="list">
+          <!-- Ejemplo de consulta -->
+          <li>
+            <strong>Fecha:</strong> 20/06/2025 <br />
+            <strong>Especialidad:</strong> Medicina General <br />
+            <strong>Profesional:</strong> Dr. Carlos Pérez <br />
+            <strong>Hora:</strong> 10:30 AM <br />
+            <button
+              class="btn-cancelar"
+              aria-label="Cancelar consulta del 20 de junio de 2025"
+            >
+              <i class="fa fa-times"></i> Cancelar
+            </button>
+          </li>
+          <!-- Más consultas -->
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-logo">
+        <img src="image/logo.png" alt="Logo Conecta+" class="footer-logo-img" />
+      </div>
+      <div class="footer-text">
+        <strong>Equipo de trabajo 6 de Bases de Innovación</strong><br />
+        Carrera de Ingeniería en Informática<br />
+        Jeannette Figueroa, César Carrasco, Álvaro C. Plaza y Sofía Vera.<br />
+        Profesora: Tamara Laibe
+      </div>
+    </footer>
+  </body>
+</html>

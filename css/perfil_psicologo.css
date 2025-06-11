@@ -1,0 +1,172 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #ffffff;
+  --text-dark: #31425b;
+  --bg: #eaf2fb;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header con botón de regreso */
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-regresar {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.btn-regresar:hover,
+.btn-regresar:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+h1#nombrePsicologo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  user-select: none;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Foto psicólogo */
+#fotoPsicologo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  border: 3px solid var(--accent);
+}
+
+/* Información textual */
+#perfil p {
+  flex: 1 1 300px;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: var(--text-dark);
+}
+
+#perfil strong {
+  color: var(--primary);
+  user-select: none;
+}
+
+/* Descripción con margen extra */
+#descripcion {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive para móvil */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  #fotoPsicologo {
+    width: 140px;
+    height: 140px;
+  }
+
+  #perfil p {
+    flex: unset;
+    text-align: center;
+  }
+
+  h1#nombrePsicologo {
+    font-size: 1.7rem;
+  }
+}
+
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-regresar {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.btn-regresar:hover,
+.btn-regresar:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,58 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agendar Cita - Conecta+</title>
-  <link rel="stylesheet" href="css/agendar_cita.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <script defer src="js/agendar_cita.js"></script>
-</head>
-<body>
-  <div class="container">
-    <header class="header">
-      <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
-      <h2>Agendar Cita</h2>
-    </header>
-    <form id="formCita" class="cita-form">
-      <div class="form-group">
-        <label for="fecha"><i class="fa fa-calendar-alt"></i> Fecha</label>
-        <input type="date" id="fecha" name="fecha" required min="" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agendar Cita - Conecta+</title>
+    <link rel="stylesheet" href="css/agendar_cita.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script defer src="js/agendar_cita.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
+        <h2>Agendar Cita</h2>
+        <div class="accesibilidad-controles">
+        <button onclick="cambiarFuente(1)">A+</button>
+        <button onclick="cambiarFuente(0)">A</button>
+        <button onclick="cambiarFuente(-1)">A-</button>
       </div>
-      <div class="form-group">
-        <label for="psicologo"><i class="fa fa-user-md"></i> Psicólogo/a</label>
-        <select id="psicologo" name="psicologo" required>
-          <option value="">Selecciona un psicólogo/a</option>
-          <option value="Laura G.">Laura G.</option>
-          <option value="Mario R.">Mario R.</option>
-          <option value="Elena S.">Elena S.</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="hora"><i class="fa fa-clock"></i> Hora</label>
-        <select id="hora" name="hora" required>
-          <option value="">Selecciona una hora</option>
-          <option value="09:00">09:00</option>
-          <option value="10:00">10:00</option>
-          <option value="11:00">11:00</option>
-          <option value="12:00">12:00</option>
-          <option value="15:00">15:00</option>
-          <option value="16:00">16:00</option>
-          <option value="17:00">17:00</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label><i class="fa fa-globe"></i> Modalidad</label>
-        <div class="radio-group">
-          <input type="radio" id="online" name="modalidad" value="Online" required checked>
-          <label for="online" class="radio-btn"><i class="fa fa-video"></i> Online</label>
-          <input type="radio" id="presencial" name="modalidad" value="Presencial" required>
-          <label for="presencial" class="radio-btn"><i class="fa fa-building"></i> Presencial</label>
+      </header>
+      <form id="formCita" class="cita-form">
+        <div class="form-group">
+          <label for="tipoProfesional"
+            ><i class="fa fa-users"></i> Tipo de Profesional</label
+          >
+          <select id="tipoProfesional" required>
+            <option value="">Selecciona un tipo</option>
+            <option value="psicologo">Psicólogo/a</option>
+            <option value="terapeuta">Terapeuta</option>
+            <option value="psiquiatra">Psiquiatra</option>
+          </select>
         </div>
-      </div>
-      <div id="mensaje" class="mensaje"></div>
-      <button type="submit" class="btn-agendar"><i class="fa fa-calendar-check"></i> Agendar cita</button>
-    </form>
-  </div>
-</body>
+
+        <div class="form-group">
+          <label for="edad"><i class="fa fa-child"></i> Etapa Etaria</label>
+          <select id="edad" required>
+            <option value="">Selecciona una etapa</option>
+            <option value="infantil">Infantil</option>
+            <option value="adolescente">Adolescente</option>
+            <option value="adulto">Adulto</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="psicologo"
+            ><i class="fa fa-user-md"></i> Profesional</label
+          >
+          <select id="psicologo" name="psicologo" required>
+            <option value="">Selecciona un profesional</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha"><i class="fa fa-calendar-alt"></i> Fecha</label>
+          <input type="date" id="fecha" name="fecha" required min="" />
+        </div>
+
+        <div class="form-group">
+          <label for="hora"><i class="fa fa-clock"></i> Hora</label>
+          <select id="hora" name="hora" required>
+            <option value="">Selecciona una hora</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label><i class="fa fa-globe"></i> Modalidad</label>
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="online"
+              name="modalidad"
+              value="Online"
+              required
+              checked
+            />
+            <label for="online" class="radio-btn"
+              ><i class="fa fa-video"></i> Online</label
+            >
+            <input
+              type="radio"
+              id="presencial"
+              name="modalidad"
+              value="Presencial"
+              required
+            />
+            <label for="presencial" class="radio-btn"
+              ><i class="fa fa-building"></i> Presencial</label
+            >
+          </div>
+        </div>
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <button type="submit" class="btn-agendar">
+          <i class="fa fa-calendar-check"></i> Agendar cita
+        </button>
+
+        <button
+          type="button"
+          class="btn-regresar"
+          onclick="location.href='apoyo_emocional.html'"
+        >
+          <i class="fa fa-arrow-left"></i> Volver a Apoyo Emocional
+        </button>
+      </form>
+    </div>
+  </body>
 </html>

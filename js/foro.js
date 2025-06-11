@@ -18,16 +18,18 @@ const btnVolver = document.getElementById('btnVolver');
 const btnNuevoTema = document.getElementById('btnNuevoTema');
 const btnCancelarNuevoTema = document.getElementById('btnCancelarNuevoTema');
 const formNuevoTema = document.getElementById('formNuevoTema');
+const botonesCategoria = document.querySelectorAll('.filtro-categoria');
 
 let temaActualId = null;
+let categoriaSeleccionada = 'todos';
 
 // Renderizar lista de temas filtrada
-function renderListaTemas(filtro = '', categoria = 'todos') {
+function renderListaTemas(filtro = '') {
   listaTemasEl.innerHTML = '';
   let temasFiltrados = foroData.temas;
 
-  if (categoria !== 'todos') {
-    temasFiltrados = temasFiltrados.filter(t => t.categoria === categoria);
+  if (categoriaSeleccionada !== 'todos') {
+    temasFiltrados = temasFiltrados.filter(t => t.categoria === categoriaSeleccionada);
   }
 
   if (filtro.trim() !== '') {
@@ -65,7 +67,7 @@ function categoriaNombre(cat) {
   }
 }
 
-// Abrir tema y mostrar detalles y comentarios
+// Abrir tema
 function abrirTema(id) {
   temaActualId = id;
   const tema = foroData.temas.find(t => t.id === id);
@@ -99,7 +101,7 @@ function renderComentarios(comentarios) {
   });
 }
 
-// Volver a lista de temas
+// Volver a lista
 btnVolver.addEventListener('click', () => {
   temaActualId = null;
   listaTemasSection.classList.remove('hidden');
@@ -108,19 +110,18 @@ btnVolver.addEventListener('click', () => {
   renderListaTemas(buscarTemasInput.value);
 });
 
-// Buscar temas en tiempo real
+// Buscar
 buscarTemasInput.addEventListener('input', () => {
   renderListaTemas(buscarTemasInput.value);
 });
 
-// Mostrar formulario nuevo tema
+// Nuevo tema
 btnNuevoTema.addEventListener('click', () => {
   listaTemasSection.classList.add('hidden');
   verTemaSection.classList.add('hidden');
   nuevoTemaSection.classList.remove('hidden');
 });
 
-// Cancelar nuevo tema
 btnCancelarNuevoTema.addEventListener('click', () => {
   listaTemasSection.classList.remove('hidden');
   verTemaSection.classList.add('hidden');
@@ -128,7 +129,6 @@ btnCancelarNuevoTema.addEventListener('click', () => {
   formNuevoTema.reset();
 });
 
-// Enviar nuevo tema
 formNuevoTema.addEventListener('submit', e => {
   e.preventDefault();
   const titulo = document.getElementById('tituloTema').value.trim();
@@ -158,7 +158,7 @@ formNuevoTema.addEventListener('submit', e => {
   renderListaTemas();
 });
 
-// Enviar comentario
+// Comentarios
 formComentario.addEventListener('submit', e => {
   e.preventDefault();
   const texto = inputComentario.value.trim();
@@ -173,5 +173,53 @@ formComentario.addEventListener('submit', e => {
   renderComentarios(tema.comentarios);
 });
 
+// Menú responsive
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+// Filtrado por categoría
+botonesCategoria.forEach(btn => {
+  btn.addEventListener('click', () => {
+    botonesCategoria.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    categoriaSeleccionada = btn.dataset.category;
+    renderListaTemas(buscarTemasInput.value);
+  });
+});
+
 // Inicializar
 renderListaTemas();
+
+// Función para cambiar tamaño de fuente (puede estar fuera del DOMContentLoaded)
+function cambiarFuente(opcion) {
+  const html = document.documentElement;
+  let size = parseInt(html.style.fontSize) || 16;
+  if(opcion === 1) size += 2;
+  else if(opcion === -1) size -= 2;
+  else size = 16;
+  html.style.fontSize = size + "px";
+}

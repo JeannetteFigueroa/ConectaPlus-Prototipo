@@ -1,0 +1,132 @@
+/* videoconsulta.css */
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+  --bg: #eaf2fb;
+  --text-dark: #31425b;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.video-header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-regresar {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  flex: 1;
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.video-container {
+  position: relative;
+  background: black;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.video-label {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  background: rgba(0,0,0,0.5);
+  color: var(--white);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.video-controls button {
+  background: var(--accent);
+  border: none;
+  color: var(--primary);
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.video-controls button:hover,
+.video-controls button:focus {
+  background: #4aa89e;
+  outline: none;
+}
+
+.btn-end-call {
+  background: #d9534f;
+  color: #fff;
+}
+
+.btn-end-call:hover,
+.btn-end-call:focus {
+  background: #c9302c;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

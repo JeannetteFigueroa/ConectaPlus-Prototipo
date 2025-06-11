@@ -160,3 +160,7 @@ button:hover {
   color: var(--white);
   border-color: var(--accent);
 }
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

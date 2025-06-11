@@ -1,0 +1,131 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+  --bg: #eaf2fb;
+  --text-dark: #31425b;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo-link .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  display: block;
+}
+
+.header h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+/* Contenedor principal */
+.main-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Formulario */
+.form-modificar-cuenta fieldset {
+  border: 1.5px solid var(--accent);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.form-modificar-cuenta legend {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.form-modificar-cuenta label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-modificar-cuenta input,
+.form-modificar-cuenta textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-modificar-cuenta input:focus,
+.form-modificar-cuenta textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.form-modificar-cuenta button.btn-submit {
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.form-modificar-cuenta button.btn-submit:hover,
+.form-modificar-cuenta button.btn-submit:focus {
+  background: #4aa89e;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

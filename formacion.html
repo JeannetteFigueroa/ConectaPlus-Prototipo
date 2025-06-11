@@ -1,131 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Formación - Conecta+</title>
-  <link rel="stylesheet" href="css/formacion.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head>
-<body>
-  <div class="layout">
-    <!-- Menú lateral -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <img src="image/logo.png" alt="Logo Conecta+" class="sidebar-logo" />
-        <span class="sidebar-title">Conecta+</span>
-      </div>
-      <nav class="sidebar-nav">
-        <a href="principal.html"><i class="fa fa-home"></i> Inicio</a>
-        <a href="apoyo_emocional.html"><i class="fa fa-heart"></i> Apoyo emocional</a>
-        <a href="formacion.html" class="active"><i class="fa fa-graduation-cap"></i> Formación</a>
-        <a href="servicios_sociales.html"><i class="fa fa-hands-helping"></i> Servicios sociales</a>
-      </nav>
-    </aside>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formación - Conecta+</title>
+    <link rel="stylesheet" href="css/formacion.css" />
+    <script defer src="js/formacion.js"></script>
+    <link rel="stylesheet" href="css/layout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+      <!-- Menú lateral -->
+      <!-- Botón hamburguesa para móviles -->
+      <button
+        class="sidebar-toggle"
+        id="sidebarToggle"
+        aria-label="Menú lateral"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
-    <!-- Contenido principal -->
-    <main class="main-content">
-      <div class="top-bar">
-        <h1 class="formacion-title">Nuestros programas</h1>
-        <div class="search-box">
-          <input type="text" placeholder="¿Qué estás buscando?" />
-          <button><i class="fa fa-search"></i></button>
+      <!-- Menú lateral -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <img src="image/logo.png" alt="Logo Conecta+" class="sidebar-logo" />
+          <span class="sidebar-title">Conecta+</span>
         </div>
-      </div>
-      <div class="content-flex">
-        <!-- Filtros -->
-        <aside class="filters">
-          <div class="filter-group">
-            <label for="tipoPrograma">Tipo de Programa</label>
-            <select id="tipoPrograma">
-              <option value="">Todos</option>
-              <option value="curso">Curso</option>
-              <option value="taller">Taller</option>
-              <option value="diplomado">Diplomado</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="modalidad">Modalidad</label>
-            <select id="modalidad">
-              <option value="">Todas</option>
-              <option value="online">Online</option>
-              <option value="presencial">Presencial</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="area">Área</label>
-            <select id="area">
-              <option value="">Todas</option>
-              <option value="educacion">📚 Educación</option>
-              <option value="digital">📱 Digital</option>
-              <option value="finanzas">💰 Finanzas</option>
-              <option value="laboral">💼 Laboral</option>
-            </select>
-          </div>
-          <button class="btn-filtros">Aplicar Filtros</button>
-        </aside>
+        <nav class="sidebar-nav">
+          <a href="principal.html"><i class="fa fa-home"></i> Inicio</a>
+          <a href="apoyo_emocional.html"
+            ><i class="fa fa-heart"></i> Apoyo emocional</a
+          >
+          <a href="formacion.html" class="active"
+            ><i class="fa fa-graduation-cap"></i> Formación</a
+          >
+          <a href="servicios_sociales.html"
+            ><i class="fa fa-hands-helping"></i> Servicios sociales</a
+          >
+        </nav>
+      </aside>
 
-        <!-- Lista de programas/cursos -->
-        <section class="program-list">
-          <!-- Curso 1 -->
-          <article class="program-card">
-            <img src="image/cursos/matematicas.jpg" alt="Curso Matemáticas" class="program-img" />
-            <div class="program-info">
-              <h2>📚 Curso de Matemáticas Básicas</h2>
-              <span class="program-type">Curso</span>
-              <a href="https://aprendoenlinea.mineduc.cl/" target="_blank" class="btn-info">Más información</a>
-              <div class="program-meta">
-                <span><i class="fa fa-calendar-alt"></i> Disponible todo el año</span>
-                <span><i class="fa fa-clock"></i> 40 horas</span>
-                <span><i class="fa fa-globe"></i> Online</span>
-              </div>
-            </div>
-          </article>
-          <!-- Curso 2 -->
-          <article class="program-card">
-            <img src="image/cursos/alfabetizacion.jpg" alt="Alfabetización Digital" class="program-img" />
-            <div class="program-info">
-              <h2>📱 Alfabetización Digital</h2>
-              <span class="program-type">Taller</span>
-              <a href="https://www.cdt.cl/curso-basico-uso-smartphone/" target="_blank" class="btn-info">Más información</a>
-              <div class="program-meta">
-                <span><i class="fa fa-calendar-alt"></i> Próximo inicio: 3 Junio 2025</span>
-                <span><i class="fa fa-clock"></i> 20 horas</span>
-                <span><i class="fa fa-users"></i> Presencial</span>
-              </div>
-            </div>
-          </article>
-          <!-- Curso 3 -->
-          <article class="program-card">
-            <img src="image/cursos/finanzas.jpg" alt="Educación Financiera" class="program-img" />
-            <div class="program-info">
-              <h2>💰 Educación Financiera Familiar</h2>
-              <span class="program-type">Curso</span>
-              <a href="https://www.sernac.cl/portal/604/w3-article-3934.html" target="_blank" class="btn-info">Más información</a>
-              <div class="program-meta">
-                <span><i class="fa fa-calendar-alt"></i> Disponible todo el año</span>
-                <span><i class="fa fa-clock"></i> 30 horas</span>
-                <span><i class="fa fa-globe"></i> Online</span>
-              </div>
-            </div>
-          </article>
-          <!-- Curso 4 -->
-          <article class="program-card">
-            <img src="image/cursos/laboral.jpg" alt="Habilidades Laborales" class="program-img" />
-            <div class="program-info">
-              <h2>💼 Taller de Habilidades Laborales</h2>
-              <span class="program-type">Taller</span>
-              <a href="https://www.sence.cl/personas/cursos-en-linea" target="_blank" class="btn-info">Más información</a>
-              <div class="program-meta">
-                <span><i class="fa fa-calendar-alt"></i> Próximo inicio: 10 Mayo 2025</span>
-                <span><i class="fa fa-clock"></i> 12 horas</span>
-                <span><i class="fa fa-globe"></i> Online</span>
-              </div>
-            </div>
-          </article>
+      <!-- Contenido principal -->
+      <main class="main-content">
+        <!-- Nueva sección de introducción con texto y video -->
+        <section class="intro-modulo">
+          <h2>Introducción al módulo de Formación</h2>
+          <p>
+           Accede a cursos gratuitos, recursos escolares, alfabetización digital, educación financiera y capacitación laboral. Desde apoyo escolar hasta certificaciones y postgrados, Conecta+ te acompaña en cada etapa de tu aprendizaje, sin importar tu edad.
+          </p>
+           <div class="accesibilidad-controles">
+            <button onclick="cambiarFuente(1)">A+</button>
+            <button onclick="cambiarFuente(0)">A</button>
+            <button onclick="cambiarFuente(-1)">A-</button>
+          </div>
+          <div class="video-container">
+            <video
+              controls
+              width="50%"
+              preload="metadata"
+              poster="image/video-poster.jpg"
+            >
+              <source
+                src="video/tutorial_apoyo_emocional.mp4"
+                type="video/mp4"
+              />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
         </section>
-      </div>
-    </main>
-  </div>
-</body>
+
+        <!-- Contenido principal -->
+        <div class="top-bar">
+          <h1 class="formacion-title">Nuestros programas</h1>
+          <div class="search-box">
+            <input type="text" placeholder="¿Qué estás buscando?" />
+            <button><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="content-flex">
+          <!-- Filtros -->
+          <aside class="filters">
+            <div class="filter-group">
+              <label for="tipoPrograma">Tipo de Programa</label>
+              <select id="tipoPrograma">
+                <option value="">Todos</option>
+                <option value="curso">Curso</option>
+                <option value="taller">Taller</option>
+                <option value="diplomado">Diplomado</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="modalidad">Modalidad</label>
+              <select id="modalidad">
+                <option value="">Todas</option>
+                <option value="online">Online</option>
+                <option value="presencial">Presencial</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="area">Área</label>
+              <select id="area">
+                <option value="">Todas</option>
+                <option value="educacion">📚 Educación</option>
+                <option value="digital">📱 Digital</option>
+                <option value="finanzas">💰 Finanzas</option>
+                <option value="laboral">💼 Laboral</option>
+              </select>
+            </div>
+            <button class="btn-filtros">Aplicar Filtros</button>
+          </aside>
+
+          <!-- Lista de programas/cursos -->
+         <section class="program-list">
+            <!-- Curso 1 -->
+            <article class="program-card">
+              <img src="image/matematicas.jpg" alt="Curso Matemáticas" class="program-img" />
+              <div class="program-info">
+                <h2>📚 Curso de Matemáticas Básicas</h2>
+                <p class="program-description">
+                  Aprende los fundamentos de matemáticas básicas: operaciones, proporciones, fracciones y resolución de problemas cotidianos.
+                </p>
+                <span class="program-type">Curso</span>
+                <button class="btn-info" onclick="verDetalle('matematicas-basicas')">Más información</button>
+                <div class="program-meta">
+                  <span><i class="fa fa-calendar-alt"></i> Disponible todo el año</span>
+                  <span><i class="fa fa-clock"></i> 40 horas</span>
+                  <span><i class="fa fa-globe"></i> Online</span>
+                </div>
+              </div>
+            </article>
+            <!-- Curso 2 -->
+            <article class="program-card">
+              <img src="image/alfabetizacion.jpg" alt="Alfabetización Digital" class="program-img" />
+              <div class="program-info">
+                <h2>📱 Alfabetización Digital</h2>
+                <p class="program-description">
+                  Aprende a usar tu smartphone, navegar por internet, realizar trámites digitales y proteger tu información personal.
+                </p>
+                <span class="program-type">Taller</span>
+                <button class="btn-info" onclick="verDetalle('alfabetizacion-digital')">Más información</button>
+                <div class="program-meta">
+                  <span><i class="fa fa-calendar-alt"></i> Próximo inicio: 3 Junio 2025</span>
+                  <span><i class="fa fa-clock"></i> 20 horas</span>
+                  <span><i class="fa fa-users"></i> Presencial</span>
+                </div>
+              </div>
+            </article>
+            <!-- Curso 3 -->
+            <article class="program-card">
+              <img src="image/finanzas.jpg" alt="Educación Financiera" class="program-img" />
+              <div class="program-info">
+                <h2>💰 Educación Financiera Familiar</h2>
+                <p class="program-description">
+                  Descubre cómo organizar tu presupuesto, evitar deudas, ahorrar y tomar mejores decisiones financieras para tu familia.
+                </p>
+                <span class="program-type">Curso</span>
+                <button class="btn-info" onclick="verDetalle('finanzas-familiares')">Más información</button>
+                <div class="program-meta">
+                  <span><i class="fa fa-calendar-alt"></i> Disponible todo el año</span>
+                  <span><i class="fa fa-clock"></i> 30 horas</span>
+                  <span><i class="fa fa-globe"></i> Online</span>
+                </div>
+              </div>
+            </article>
+            <!-- Curso 4 -->
+            <article class="program-card">
+              <img src="image/laboral.jpg" alt="Habilidades Laborales" class="program-img" />
+              <div class="program-info">
+                <h2>💼 Taller de Habilidades Laborales</h2>
+                <p class="program-description">
+                  Mejora tu empleabilidad: aprende a hacer tu currículum, prepararte para entrevistas y desarrollar habilidades blandas y digitales.
+                </p>
+                <span class="program-type">Taller</span>
+                <button class="btn-info" onclick="verDetalle('habilidades-laborales')">Más información</button>
+                <div class="program-meta">
+                  <span><i class="fa fa-calendar-alt"></i> Próximo inicio: 10 Mayo 2025</span>
+                  <span><i class="fa fa-clock"></i> 12 horas</span>
+                  <span><i class="fa fa-globe"></i> Online</span>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

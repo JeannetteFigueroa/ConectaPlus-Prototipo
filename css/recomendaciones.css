@@ -1,0 +1,115 @@
+/* recomendaciones.css */
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+  --bg: #eaf2fb;
+  --text-dark: #31425b;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.btn-regresar {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.recomendaciones-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.recomendacion-card {
+  background: #f3f8fc;
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 16px rgba(90, 115, 185, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--primary);
+}
+
+.recomendacion-card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.recomendacion-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.recomendacion-card .tipo {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 0 0 1rem 1rem;
+  margin-top: auto;
+}
+
+.footer-logo-img {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

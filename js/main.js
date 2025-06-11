@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (usuario.rol === "profesional") {
     rankingTitle.textContent = "Ranking de Profesionales";
-    // Ejemplo de ranking de profesionales
     const profesionales = [
       { nombre: "Dra. Andrea Soto", puntos: 690, avatar: "image/avatar1.png" },
       { nombre: "Lic. Pablo Ruiz", puntos: 610, avatar: "image/avatar1.png" },
@@ -29,11 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   } else {
     rankingTitle.textContent = "Ranking de Buen Vecino";
-    // Ejemplo de ranking de vecinos
     const vecinos = [
-      { nombre: "Nicolás", puntos: 485, avatar: "image/avatar1.png" },
+      { nombre: "Nicolás", puntos: 485, avatar: "image/avatar2.png" },
       { nombre: "Valentina", puntos: 430, avatar: "image/avatar1.png" },
-      { nombre: "Martín", puntos: 405, avatar: "image/avatar1.png" }
+      { nombre: "Martín", puntos: 405, avatar: "image/avatar4.png" }
     ];
     vecinos.forEach(vecino => {
       rankingList.innerHTML += `
@@ -47,33 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Menú hamburguesa
-document.addEventListener('DOMContentLoaded', () => {
+// Menú hamburguesa
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
 
   hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('show'));
+    navMenu.classList.toggle('active');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
   });
 
-  // Oculta el menú al hacer clic fuera
-  document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-      navMenu.classList.remove('show');
-      hamburger.setAttribute('aria-expanded', false);
-    }
-  });
-
-  // Opcional: Oculta menú al hacer clic en un enlace
+  // Cerrar menú al hacer clic en enlace (móvil)
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('show');
-      hamburger.setAttribute('aria-expanded', false);
+      if (window.innerWidth <= 768) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
     });
   });
-});
 
+  // Cerrar menú al redimensionar a escritorio
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // Menú de cuenta tipo GitHub
   const accountBtn = document.getElementById('accountBtn');
@@ -87,13 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
       accountMenu.classList.remove('open');
     }
   });
-});
 
- document.getElementById('btnNecesitoOfrezco').addEventListener('click', () => {
-    window.location.href = 'necesito_ofrezco.html';
-  });
+  // Botón Necesito/Ofrezco
+  const btnNecesitoOfrezco = document.getElementById('btnNecesitoOfrezco');
+  if (btnNecesitoOfrezco) {
+    btnNecesitoOfrezco.addEventListener('click', () => {
+      window.location.href = 'necesito_ofrezco.html';
+    });
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
+  // Eventos para tarjetas
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function() {
       const text = this.textContent.trim();
@@ -107,3 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Función para cambiar tamaño de fuente (puede estar fuera del DOMContentLoaded)
+function cambiarFuente(opcion) {
+  const html = document.documentElement;
+  let size = parseInt(html.style.fontSize) || 16;
+  if(opcion === 1) size += 2;
+  else if(opcion === -1) size -= 2;
+  else size = 16;
+  html.style.fontSize = size + "px";
+}

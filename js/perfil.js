@@ -42,19 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     puntosCanje.textContent = '0';
   }
 
-  // Insertar contenido dinámico en menú de cuenta
-  accountDropdown.innerHTML = `
-    <div style="padding: 1rem; border-bottom: 1px solid #ddd; color: #254c7b;">
-      <strong>${usuario?.nombre || 'Invitado'}</strong><br/>
-      <small>${usuario?.correo || ''}</small><br/>
-      <small>Cuenta: ${usuario?.tipoCuenta || 'Invitado'}</small><br/>
-      <small>Ranking: ${usuario?.ranking !== undefined ? '#' + usuario.ranking : '-'}</small><br/>
-      <small>Puntos de canje: ${usuario?.puntosCanje !== undefined ? usuario.puntosCanje : '0'}</small>
-    </div>
-    <a href="mi_cuenta.html">Mi perfil</a>
-    <a href="#">Modificar cuenta</a>
-    <a href="#">Cerrar sesión</a>
-  `;
 
   // Manejo menú cuenta
   accountBtn.addEventListener('click', (e) => {
@@ -78,3 +65,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+// Menú hamburguesa
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  // Cerrar menú al hacer clic en enlace (móvil)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Cerrar menú al redimensionar a escritorio
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Menú de cuenta tipo GitHub
+  const accountBtn = document.getElementById('accountBtn');
+  const accountMenu = document.getElementById('accountMenu');
+  accountBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    accountMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!accountMenu.contains(e.target)) {
+      accountMenu.classList.remove('open');
+    }
+  });

@@ -1,85 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Necesito / Ofrezco Ayuda - Conecta+</title>
-  <link rel="stylesheet" href="css/necesito_ofrezco.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-</head>
-<body>
-  <!-- Barra superior -->
-  <header class="header">
-    <div class="header-left">
-      <button id="hamburger" class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="logo-bg">
-        <a href="principal.html" aria-label="Inicio Conecta+">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Necesito / Ofrezco Ayuda - Conecta+</title>
+    <link rel="stylesheet" href="css/necesito_ofrezco.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra superior -->
+    <header class="header">
+      <div class="header-left">
+        <a href="principal.html" aria-label="Inicio Conecta+" class="logo-link">
           <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
         </a>
       </div>
-      <span class="app-title">Conecta+</span>
-    </div>
 
-    <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Navegación principal">
-      <a href="principal.html" class="nav-link">Inicio</a>
-      <a href="foro.html" class="nav-link">Foro</a>
-      <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
-      <a href="ayuda.html" class="nav-link">Ayuda</a>
-      <a href="chats.html" class="nav-link">Chats</a>
-      
-    </nav>
-
-    <div class="account-menu" id="accountMenu">
-      <button id="accountBtn" class="account-btn" aria-label="Cuenta">
-        <img src="image/avatar.png" alt="Cuenta" class="avatar-mini" />
-        <span class="caret"></span>
+      <button
+        id="hamburger"
+        class="hamburger"
+        aria-label="Menú"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div id="accountDropdown" class="account-dropdown" hidden>
-        <a href="mi">Mi perfil</a>
-        <a href="#">Modificar cuenta</a>
-        <a href="#">Cerrar sesión</a>
+
+      <nav
+        id="navMenu"
+        class="nav-menu"
+        role="navigation"
+        aria-label="Navegación principal"
+      >
+        <a href="principal.html" class="nav-link">Inicio</a>
+        <a href="foro.html" class="nav-link">Foro</a>
+        <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
+        <a href="ayuda.html" class="nav-link">Ayuda</a>
+        <a href="chats.html" class="nav-link">Chats</a>
+      </nav>
+
+      <div class="account-menu" id="accountMenu">
+        <button id="accountBtn" class="account-btn" aria-label="Cuenta">
+          <img src="image/avatar.png" alt="Cuenta" class="avatar-mini" />
+          <span class="caret"></span>
+        </button>
+        <div id="accountDropdown" class="account-dropdown" hidden>
+          <a href="mi_cuenta.html">Mi perfil</a>
+          <a href="modificar_cuenta.html">Modificar cuenta</a>
+          <a href="index.html">Cerrar sesión</a>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="main-content" tabindex="-1">
-    <section class="posts-section">
-      <h1>Necesito / Ofrezco ayuda</h1>
-      <button id="btnNuevoPost" class="btn-nuevo-post"><i class="fa fa-plus"></i> Publicar</button>
+    <main class="main-content" tabindex="-1">
+      <!-- Nueva sección de introducción con texto y video -->
+      <section class="intro-modulo">
+        <h2>Introducción a Necesito/Ofrezo ayuda</h2>
+        <p>
+          Un espacio solidario donde las personas pueden publicar si necesitan
+          apoyo o si desean brindar ayuda a otros. Ya sea ofreciendo alimentos,
+          ropa, orientación, compañía o cualquier tipo de asistencia, aquí
+          fomentamos la colaboración entre usuarios para construir una comunidad
+          más empática, conectada y activa
+        </p>
+        <div class="accesibilidad-controles">
+          <button onclick="cambiarFuente(1)">A+</button>
+          <button onclick="cambiarFuente(0)">A</button>
+          <button onclick="cambiarFuente(-1)">A-</button>
+        </div>
+        <div class="video-container">
+          <video
+            controls
+            width="50%"
+            preload="metadata"
+            poster="image/video-poster.jpg"
+          >
+            <source src="video/tutorial_apoyo_emocional.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+      </section>
+      <section class="posts-section">
+        <h1>Necesito / Ofrezco ayuda</h1>
+        <button id="btnNuevoPost" class="btn-nuevo-post">
+          <i class="fa fa-plus"></i> Publicar
+        </button>
 
-      <ul id="postsList" class="posts-list" aria-live="polite" aria-relevant="additions">
-        <!-- Posts generados por JS -->
-      </ul>
-    </section>
+        <ul
+          id="postsList"
+          class="posts-list"
+          aria-live="polite"
+          aria-relevant="additions"
+        >
+          <!-- Posts generados por JS -->
+        </ul>
+      </section>
 
-    <section id="nuevoPostSection" class="nuevo-post-section hidden" aria-label="Formulario para publicar ayuda">
-      <button id="btnCancelarPost" class="btn-volver"><i class="fa fa-arrow-left"></i> Cancelar</button>
-      <h2>Publicar nueva ayuda</h2>
-      <form id="formNuevoPost" class="form-nuevo-post">
-        <label for="tipoPost">Tipo</label>
-        <select id="tipoPost" required>
-          <option value="">Selecciona tipo</option>
-          <option value="necesito">Necesito ayuda</option>
-          <option value="ofrezco">Ofrezco ayuda</option>
-          <option value="voluntariado">Voluntariado</option>
-        </select>
+      <section
+        id="nuevoPostSection"
+        class="nuevo-post-section hidden"
+        aria-label="Formulario para publicar ayuda"
+      >
+        <button id="btnCancelarPost" class="btn-volver">
+          <i class="fa fa-arrow-left"></i> Cancelar
+        </button>
+        <h2>Publicar nueva ayuda</h2>
+        <form id="formNuevoPost" class="form-nuevo-post">
+          <label for="tipoPost">Tipo</label>
+          <select id="tipoPost" required>
+            <option value="">Selecciona tipo</option>
+            <option value="necesito">Necesito ayuda</option>
+            <option value="ofrezco">Ofrezco ayuda</option>
+            <option value="voluntariado">Voluntariado</option>
+          </select>
 
-        <label for="tituloPost">Título</label>
-        <input type="text" id="tituloPost" maxlength="100" required placeholder="Título breve" />
+          <label for="tituloPost">Título</label>
+          <input
+            type="text"
+            id="tituloPost"
+            maxlength="100"
+            required
+            placeholder="Título breve"
+          />
 
-        <label for="descripcionPost">Descripción</label>
-        <textarea id="descripcionPost" rows="5" required placeholder="Describe tu necesidad o lo que ofreces"></textarea>
+          <label for="descripcionPost">Descripción</label>
+          <textarea
+            id="descripcionPost"
+            rows="5"
+            required
+            placeholder="Describe tu necesidad o lo que ofreces"
+          ></textarea>
 
-        <label for="contactoPost">Contacto (teléfono o correo)</label>
-        <input type="text" id="contactoPost" maxlength="100" placeholder="Opcional" />
+          <label for="contactoPost">Contacto (teléfono o correo)</label>
+          <input
+            type="text"
+            id="contactoPost"
+            maxlength="100"
+            placeholder="Opcional"
+          />
 
-        <button type="submit"><i class="fa fa-check"></i> Publicar</button>
-      </form>
-    </section>
-  </main>
+          <button type="submit"><i class="fa fa-check"></i> Publicar</button>
+        </form>
+      </section>
+    </main>
 
-  <script src="js/necesito_ofrezco.js" defer></script>
-</body>
+    <script src="js/necesito_ofrezco.js" defer></script>
+  </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Apoyo - Conecta+</title>
+    <link rel="stylesheet" href="css/chat-apoyo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header del chat -->
+    <header class="chat-header">
+        <button class="btn-regresar" onclick="history.back()" aria-label="Volver atrás">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <div class="profesional-info">
+            <img src="image/avatar-profesional.png" alt="Avatar profesional" class="avatar-profesional">
+            <div>
+                <h1>Dra. Ana Gómez</h1>
+                <span class="especialidad">Psicología</span>
+                <span class="estado">En línea</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Área de mensajes -->
+    <main class="chat-container">
+        <div class="chat-mensajes" id="chatMensajes">
+            <!-- Mensajes generados dinámicamente -->
+            <div class="mensaje recibido">
+                <p>Hola, ¿en qué puedo ayudarte hoy?</p>
+                <span class="hora">10:30 AM</span>
+            </div>
+        </div>
+
+        <!-- Formulario de envío -->
+        <form class="chat-form" id="chatForm">
+            <textarea id="mensajeInput" placeholder="Escribe tu mensaje..." rows="1"></textarea>
+            <button type="submit" aria-label="Enviar mensaje">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </form>
+    </main>
+
+    <script src="js/chat-apoyo.js"></script>
+</body>
+</html>

@@ -30,3 +30,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+// Menú hamburguesa
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+
+  // Cerrar menú al hacer clic en enlace (móvil)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Cerrar menú al redimensionar a escritorio
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Menú de cuenta tipo GitHub
+  const accountBtn = document.getElementById('accountBtn');
+  const accountMenu = document.getElementById('accountMenu');
+  accountBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    accountMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!accountMenu.contains(e.target)) {
+      accountMenu.classList.remove('open');
+    }
+  });
+
+  // Función para cambiar tamaño de fuente (puede estar fuera del DOMContentLoaded)
+function cambiarFuente(opcion) {
+  const html = document.documentElement;
+  let size = parseInt(html.style.fontSize) || 16;
+  if(opcion === 1) size += 2;
+  else if(opcion === -1) size -= 2;
+  else size = 16;
+  html.style.fontSize = size + "px";
+}

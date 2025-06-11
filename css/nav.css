@@ -1,0 +1,222 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+}
+
+/* Header principal */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--primary);
+  position: relative;
+  z-index: 100;
+}
+
+/* Logo y título */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: block;
+  width: 50px;
+}
+
+.logo-link .logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-left: 0.6rem;
+  user-select: none;
+}
+
+/* Menú de navegación */
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  background: var(--accent);
+  color: var(--primary);
+  outline: none;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* Menú móvil */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    z-index: 1000;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.8rem;
+    text-align: right;
+  }
+}
+
+/* Menú de cuenta */
+.account-menu {
+  position: relative;
+  margin-left: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.account-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.avatar-mini {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--white);
+}
+
+.caret {
+  border-top: 6px solid var(--white);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  height: 0;
+  width: 0;
+  margin-top: 4px;
+}
+
+.account-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 46px;
+  background: var(--white);
+  color: #000;
+  min-width: 170px;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 16px rgba(90, 115, 185, 0.18);
+  z-index: 200;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.account-dropdown a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  display: block;
+  transition: background 0.2s;
+  font-weight: 600;
+}
+
+.account-dropdown a:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.account-menu.open .account-dropdown {
+  display: flex;
+}
+
+/* SOLO para móviles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .hamburger {
+    order: 1;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .header-left {
+    order: 2;
+    margin-left: auto;
+  }
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: block;
+  width: 50px;
+}
+
+.logo-link .logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -6,35 +6,53 @@
   <title>Mi Perfil - Conecta+</title>
   <link rel="stylesheet" href="css/perfil.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/nav.css">
 </head>
 <body>
   <!-- Barra superior igual que en otras páginas -->
   <header class="header">
     <div class="header-left">
-      <button id="hamburger" class="hamburger" aria-label="Menú" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="logo-bg">
-        <a href="principal.html" aria-label="Inicio Conecta+">
-          <img src="image/avatar.png" alt="Avatar usuario" id="avatarMenu" class="avatar-mini" />
+        <a href="principal.html" aria-label="Inicio Conecta+" class="logo-link">
+          <img src="image/logo.png" alt="Logo Conecta+" class="logo" />
         </a>
       </div>
-      <span class="app-title">Conecta+</span>
-    </div>
 
-    <nav id="navMenu" class="nav-menu" role="navigation" aria-label="Navegación principal">
-      <a href="principal.html" class="nav-link">Inicio</a>
-      <a href="foro.html" class="nav-link">Foro</a>
-      <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
-      <a href="ayuda.html" class="nav-link">Ayuda</a>
-      <a href="chats.html" class="nav-link">Chats</a>
-    </nav>
-
-    <div class="account-menu" id="accountMenu">
-      <button id="accountBtn" class="account-btn" aria-label="Cuenta" aria-haspopup="true" aria-expanded="false" aria-controls="accountDropdown">
-        <img src="image/avatar.png" alt="Cuenta" id="avatarBtn" class="avatar-mini" />
-        <span class="caret"></span>
+      <button
+        id="hamburger"
+        class="hamburger"
+        aria-label="Menú"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
+      <nav
+        id="navMenu"
+        class="nav-menu"
+        role="navigation"
+        aria-label="Navegación principal"
+      >
+        <a href="principal.html" class="nav-link active">Inicio</a>
+        <a href="foro.html" class="nav-link">Foro</a>
+        <a href="bolsa_trabajo.html" class="nav-link">Bolsa de trabajo</a>
+        <a href="ayuda.html" class="nav-link">Ayuda</a>
+        <a href="chats.html" class="nav-link">Chats</a>
+      </nav>
+
+      <div class="account-menu" id="accountMenu">
+        <button id="accountBtn" class="account-btn" aria-label="Cuenta">
+          <img src="image/avatar.png" alt="Cuenta" class="avatar-mini" />
+          <span class="caret"></span>
+        </button>
+        <div id="accountDropdown" class="account-dropdown" hidden>
+          <a href="mi_cuenta.html">Mi perfil</a>
+          <a href="modificar_cuenta.html">Modificar cuenta</a>
+          <a href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
       <div id="accountDropdown" class="account-dropdown" hidden role="menu" aria-labelledby="accountBtn">
         <!-- Aquí el JS insertará el contenido dinámico -->
       </div>

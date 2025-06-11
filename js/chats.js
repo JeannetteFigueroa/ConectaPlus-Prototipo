@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
     const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
     hamburger.setAttribute('aria-expanded', !expanded);
-    navMenu.classList.toggle('show');
+    navMenu.classList.toggle('active'); // usa "active" para coherencia CSS
   });
 
   // Toggle menú cuenta
@@ -25,31 +25,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cerrar menús al hacer clic fuera
   document.addEventListener('click', () => {
     accountDropdown.setAttribute('hidden', '');
-    navMenu.classList.remove('show');
+    navMenu.classList.remove('active');
     hamburger.setAttribute('aria-expanded', false);
   });
 
   accountDropdown.addEventListener('click', e => e.stopPropagation());
 
-  // Datos de ejemplo para chats
+  // Datos de ejemplo para chats con mensajes aleatorios
   const chats = [
     {
       id: 1,
       name: 'Ana Gómez',
       avatar: 'image/avatar1.png',
-      messages: [
-        { text: 'Hola, ¿cómo estás?', sent: false, timestamp: '10:00' },
-        { text: 'Bien, gracias. ¿Y tú?', sent: true, timestamp: '10:01' },
-      ],
+      messages: generarMensajesAleatorios(),
     },
     {
       id: 2,
       name: 'Carlos Pérez',
       avatar: 'image/avatar2.png',
-      messages: [
-        { text: '¿Puedes ayudarme con el proyecto?', sent: false, timestamp: '09:30' },
-      ],
+      messages: generarMensajesAleatorios(),
     },
+    {
+      id: 3,
+      name: 'Lucía Fernández',
+      avatar: 'image/avatar3.png',
+      messages: generarMensajesAleatorios(),
+    }
   ];
 
   const chatList = document.getElementById('chatList');
@@ -59,6 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.getElementById('chatInput');
 
   let currentChatId = null;
+
+  // Función para generar mensajes aleatorios
+  function generarMensajesAleatorios() {
+    const textos = [
+      "Hola, ¿cómo estás?",
+      "¿Has visto el último video tutorial?",
+      "Claro, podemos agendar una cita.",
+      "Estoy aquí para ayudarte.",
+      "¿Quieres que te envíe más información?",
+      "Perfecto, quedo atento.",
+      "Gracias por tu mensaje.",
+      "Nos vemos pronto."
+    ];
+    const cantidad = Math.floor(Math.random() * 6) + 3; // 3 a 8 mensajes
+    const mensajes = [];
+    for (let i = 0; i < cantidad; i++) {
+      mensajes.push({
+        text: textos[Math.floor(Math.random() * textos.length)],
+        sent: Math.random() > 0.5,
+        timestamp: new Date().toLocaleTimeString()
+      });
+    }
+    return mensajes;
+  }
 
   // Renderizar lista de chats
   function renderChatList() {
@@ -118,6 +143,24 @@ document.addEventListener('DOMContentLoaded', () => {
     chatInput.focus();
   });
 
-  // Inicializar
+  // Inicializar mostrando la primera conversación
+  if (chats.length > 0) {
+    selectChat(chats[0].id);
+  } else {
+    chatForm.hidden = true;
+  }
+
   renderChatList();
 });
+
+
+// Función para cambiar tamaño de fuente (puede estar fuera del DOMContentLoaded)
+function cambiarFuente(opcion) {
+  const html = document.documentElement;
+  let size = parseInt(html.style.fontSize) || 16;
+  if(opcion === 1) size += 2;
+  else if(opcion === -1) size -= 2;
+  else size = 16;
+  html.style.fontSize = size + "px";
+}
+

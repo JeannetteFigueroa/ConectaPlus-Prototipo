@@ -23,6 +23,8 @@ body {
   padding: 2.5rem 2rem 2rem 2rem;
   max-width: 400px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -163,4 +165,23 @@ select:focus {
   .header h2 {
     font-size: 1.1rem;
   }
+}
+
+.btn-regresar {
+  margin-top: 1em;
+  background-color: #ccc;
+  color: #333;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+.btn-regresar:hover {
+  background-color: #bbb;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -1,0 +1,175 @@
+:root {
+  --primary: #254c7b;
+  --accent: #6cc0b9;
+  --white: #fff;
+  --bg: #eaf2fb;
+  --text-dark: #31425b;
+  --shadow: 0 8px 30px rgba(37, 76, 123, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo-link .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  display: block;
+}
+
+.header h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.main-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.historial-section,
+.consultas-section {
+  width: 100%;
+}
+
+.historial-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.historial-table th,
+.historial-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.historial-table th {
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.consultas-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.consultas-list li {
+  background: #f3f8fc;
+  border-radius: 0.8rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(37, 76, 123, 0.1);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.btn-cancelar {
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover,
+.btn-cancelar:focus {
+  background: #4aa89e;
+  outline: none;
+}
+
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.footer-logo-img {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+  .header h1 {
+    font-size: 1.2rem;
+  }
+  .historial-table th,
+  .historial-table td {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+  .consultas-list li {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+  .btn-cancelar {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+.btn-regresar {
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-regresar:hover,
+.btn-regresar:focus {
+  background: #4aa89e;
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}
