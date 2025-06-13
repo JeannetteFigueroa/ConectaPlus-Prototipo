@@ -253,3 +253,28 @@ body {
 body {
   font-family: 'Open Sans', 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
 }
+
+#map { height: 400px; width: 100%; }
+
+.filtros-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.filtros-categorias button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+.filtros-categorias button:hover,
+.filtros-categorias button.activo {
+  background-color: #0056b3;
+}
