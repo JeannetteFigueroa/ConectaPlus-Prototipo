@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Conecta+ - Principal</title>
+     <link rel="icon" type="image/png" href="image/conecta_mini_logo.png">
     <link rel="stylesheet" href="css/main.css" />
     <link
       rel="stylesheet"
@@ -57,9 +58,15 @@
         </div>
       </div>
     </header>
-
-    <!-- Introducción pág-->
-
+    <!-- Contenido principal -->
+    <main class="main-content" tabindex="-1">
+      <h1 id="greeting">Hola, Usuario</h1>
+      <div class="accesibilidad-controles">
+        <button onclick="cambiarFuente(1)">A+</button>
+        <button onclick="cambiarFuente(0)">A</button>
+        <button onclick="cambiarFuente(-1)">A-</button>
+      </div>
+ <!-- Introducción pág-->
     <section class="intro-section">
       <h2>Bienvenido a Conecta+</h2>
       <div class="intro-descripcion">
@@ -95,22 +102,19 @@
       </div>
       <div class="intro-video">
         <!-- Caja para video tutorial -->
-        <video id="videoTutorial" width="100%" controls>
-          <source src="video/tutorial.mp4" type="video/mp4" />
-          Tu navegador no soporta el video.
-        </video>
-      </div>
+       <video
+              controls
+              width="100%"
+              preload="metadata"
+              poster="image/7.jpg"
+            >
+              <source
+                src="vid/principal.mp4"
+                type="video/mp4"
+              />
+              Tu navegador no soporta el video.
+            </video>
     </section>
-
-    <!-- Contenido principal -->
-    <main class="main-content" tabindex="-1">
-      <h1 id="greeting">Hola, Usuario</h1>
-      <div class="accesibilidad-controles">
-        <button onclick="cambiarFuente(1)">A+</button>
-        <button onclick="cambiarFuente(0)">A</button>
-        <button onclick="cambiarFuente(-1)">A-</button>
-      </div>
-
       <section class="card-section" aria-label="Secciones principales">
         <a href="apoyo_emocional.html" class="card-link">
           <div class="card" role="button" tabindex="0">

@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Videoconsulta - Conecta+</title>
-  <link rel="stylesheet" href="css/videoconsulta.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  />
-</head>
-<body>
-  <header class="video-header">
-    <button class="btn-regresar" onclick="history.back()" aria-label="Volver atrás">
-      <i class="fa fa-arrow-left"></i> Volver
-    </button>
-    <h1>Videoconsulta con Dra. Ana Gómez</h1>
-  </header>
-
-  <main class="video-main">
-    <section class="video-grid" aria-label="Videoconsulta">
-      <div class="video-container" id="localVideoContainer">
-        <video id="localVideo" autoplay muted playsinline></video>
-        <span class="video-label">Tú</span>
-      </div>
-      <div class="video-container" id="remoteVideoContainer">
-        <video id="remoteVideo" autoplay playsinline></video>
-        <span class="video-label">Dra. Ana Gómez</span>
-      </div>
-    </section>
-
-    <section class="video-controls" aria-label="Controles de videoconsulta">
-      <button id="btnToggleMic" aria-pressed="true" aria-label="Silenciar micrófono">
-        <i class="fa fa-microphone"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Videoconsulta - Conecta+</title>
+    <link rel="icon" type="image/png" href="image/conecta_mini_logo.png" />
+    <link rel="stylesheet" href="css/videoconsulta.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="video-header">
+      <button
+        class="btn-regresar"
+        onclick="history.back()"
+        aria-label="Volver atrás"
+      >
+        <i class="fa fa-arrow-left"></i> Volver
       </button>
-      <button id="btnToggleCam" aria-pressed="true" aria-label="Apagar cámara">
-        <i class="fa fa-video"></i>
-      </button>
-      <button id="btnEndCall" aria-label="Terminar llamada" class="btn-end-call">
-        <i class="fa fa-phone-slash"></i> Terminar
-      </button>
-    </section>
-  </main>
+      <h1>Videoconsulta con Dra. Ana Gómez</h1>
+    </header>
 
-  <script src="js/videoconsulta.js" defer></script>
-</body>
+    <main class="video-main">
+      <section class="video-grid" aria-label="Videoconsulta">
+        <div class="video-container" id="localVideoContainer">
+          <video id="localVideo" autoplay muted playsinline></video>
+          <span class="video-label">Tú</span>
+        </div>
+        <div class="video-container" id="remoteVideoContainer">
+          <video id="remoteVideo" autoplay playsinline></video>
+          <span class="video-label">Dra. Ana Gómez</span>
+        </div>
+      </section>
+
+      <section class="video-controls" aria-label="Controles de videoconsulta">
+        <button
+          id="btnToggleMic"
+          aria-pressed="true"
+          aria-label="Silenciar micrófono"
+        >
+          <i class="fa fa-microphone"></i>
+        </button>
+        <button
+          id="btnToggleCam"
+          aria-pressed="true"
+          aria-label="Apagar cámara"
+        >
+          <i class="fa fa-video"></i>
+        </button>
+        <button
+          id="btnEndCall"
+          aria-label="Terminar llamada"
+          class="btn-end-call"
+        >
+          <i class="fa fa-phone-slash"></i> Terminar
+        </button>
+      </section>
+    </main>
+
+    <script src="js/videoconsulta.js" defer></script>
+  </body>
 </html>

@@ -31,3 +31,13 @@ function cambiarFuente(opcion) {
   else size = 16;
   html.style.fontSize = size + "px";
 }
+
+const video = document.getElementById('miVideo');
+  video.volume = 2.0; // volumen máximo
+
+const video = document.getElementById('miVideo');
+  const volumenControl = document.getElementById('volumenControl');
+
+  volumenControl.addEventListener('input', () => {
+    video.volume = volumenControl.value;
+  });
